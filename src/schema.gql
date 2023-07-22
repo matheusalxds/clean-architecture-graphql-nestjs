@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: ID!
+  text: String!
+  status: String!
+  createdAt: String!
+  user: User!
+}
+
+type User {
+  id: ID!
+  username: String!
+  password: String!
+  todos: [Todo!]!
+}
+
+type Query {
+  getAll: [Todo!]!
+}
+
+type Mutation {
+  create(createTodo: CreateTodoInput!): Todo!
+}
+
+input CreateTodoInput {
+  text: String!
+}

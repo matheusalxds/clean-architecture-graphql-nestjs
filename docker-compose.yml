@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  database:
+    image: postgres:14.2-alpine
+    container_name: pg
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'graphql-db'
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+    networks:
+      - internal-network
+  api:
+    container_name: api
+    build: .
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - database
+    env_file:
+      - .env
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+    name: internal-network
