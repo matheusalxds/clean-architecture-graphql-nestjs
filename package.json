@@ -19,7 +19,13 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:unit": "yarn test -- --watchAll --config=jest-unit-config.js",
     "test:only": "yarn test --all --watch -f",
-    "test:e2e": "yarn test -- --watchAll -c=jest-integration-config.js"
+    "test:e2e": "yarn test -- --watchAll -c=jest-integration-config.js",
+    "up": "docker-compose up",
+    "down": "docker-compose down",
+    "create:migration": "typeorm migration:create -n",
+    "gen:migration": "typeorm migration:generate -n",
+    "run:migration": "typeorm migration:run",
+    "rev:migration": "typeorm migration:revert"
   },
   "dependencies": {
     "@apollo/server": "^4.7.5",
