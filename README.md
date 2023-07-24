@@ -87,6 +87,25 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+### Docker
+
+The simplest way to run the project is basically run by Docker.
+
+```bash
+# docker-compose
+$ docker-compose up
+```
+
+I also added a script to make it easy:
+
+```bash
+# up all the containers
+$ yarn up
+
+# down all the containers
+$ yarn down
+```
+
 ### Test
 
 ```bash
